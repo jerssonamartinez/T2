@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="adminPanel">
+
+<head>
+  <title>Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7/css/bootstrap.min.css"/>
+  <script src="bootstrap-3.3.7/js/angular.min.js"></script>
+  <script src="script.js"></script>
+    
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="panel panel-primary">
+        <div class="panel-heading"></div>
+        <div class="panel-body">Movimientos Clientes</div>
+            
+            <div class="panel-body">
+                <label for="desc_mov" class="col-lg-2 control-label">Nombre Movimiento</label>
+                <input type="text" class="form-control " id="desc_mov">
+            </div>
+            
+            <div class="panel-body">
+                <label for="desc_mov" class="col-lg-2 control-label">Tipo de Movimiento</label>
+            </div>
+            
+            <div class="panel-body">
+                
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Seleccionar
+                        
+                        <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Debito</a></li>
+                        <li><a href="#">Credito</a></li>
+                    </ul>
+                </div> 
+            </div>
+            
+            
+            <div class="panel-body">
+                <label for="valor_mov" class="col-lg-2 control-label">Valor Movimiento</label>
+                <input type="text" class="form-control" id="valor_mov">
+            </div>
+
+       <div class="panel-body">
+           
+           <button type="button" class="btn btn-primary" data-toggle="collapse" data-target="#demo">Crear Movimiento</button>
+            
+        </div>
+        
+        </div> 
+ 
+ </div>
+    
+    <div class="container" ng-controller="namesController">
+        
+        <table class="table">
+          <thead>
+            <tr >
+                <th>Nombre movimiento</th>
+                <th>Tipo movimiento</th>
+                <th>Valor movimiento</th>
+                <th>Fecha movimiento</th>
+                <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="data in names">
+                <th scope="row">1</th>
+                <td>{{data.STR_NOMBRE_MOVIMIENTO}}</td>
+                <td>{{data.STR_TIPO_MOVIMIENTO}}</td>
+                <td>{{data.NUM_VALOR_MOVIMIENTO}}</td>
+                <td>{{data.DTM_FECHA_REGISTRO}}</td>
+                <td><button type="button" class="btn">Eliminar</button></td>
+            </tr>
+          </tbody>
+        </table>        
+    </div>
+</body>
+
+</html>
+
