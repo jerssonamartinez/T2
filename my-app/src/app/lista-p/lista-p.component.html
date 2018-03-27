@@ -1,0 +1,25 @@
+<h2>Peliculazas</h2>
+<ul class="Peliculas">
+    <li *ngFor= "let pel of listado" 
+        [class.selected] = "pel ===pelSelec"
+        (click) = "darClick (pel)" >
+    
+    <span class="badge"> {{pel.id}} </span>
+            {{pel.name}}
+        
+    </li>
+</ul>
+
+<div *ngIf= "pelSelec">
+    <h2>{{pelSelec.name | uppercase}}</h2>
+    <div>
+        <label>Nombre:
+        <input ngModel= "pelSelec.name" placeholder="name">
+        </label>
+    </div>
+    <!--<img width="600" alt="imagen" src=pelSelec.imagen0>-->
+</div>
+<p>
+  lista-p works!
+    {{title}}
+</p>
